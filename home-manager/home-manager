@@ -638,6 +638,9 @@ while [[ $# -gt 0 ]]; do
             |--substitute|--no-substitute|--impure)
             PASSTHROUGH_OPTS+=("$opt")
             ;;
+        -L|--print-build-logs)
+            PASSTHROUGH_OPTS+=("$opt")
+            ;;
         -v|--verbose)
             export VERBOSE=1
             ;;
