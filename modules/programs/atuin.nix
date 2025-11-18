@@ -235,6 +235,10 @@ in
                   assertion = isLinux || isDarwin;
                   message = "The Atuin daemon can only be configured on either Linux or macOS.";
                 }
+                {
+                  assertion = isDarwin || config.home.username != "root";
+                  message = "Systemd user units cannot be run for the user 'root'";
+                }
               ];
 
               programs.atuin.settings = {
